@@ -1,446 +1,320 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="zh-CN">
 <head>
-    <meta charset="utf-8" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>第十八条途径</title>
+  <style>
+    :root{
+      --bg:#0f1020;
+      --card:#11121f;
+      --accent-blue:#2b6cb0;
+      --accent-red:#b02b2b;
+      --muted:#9aa0b4;
+    }
+    body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;background:linear-gradient(180deg,#07060b 0%, #121218 100%);color:#e6eef8}
+    .wrap{max-width:1100px;margin:28px auto;padding:20px}
+    h1{margin:0 0 20px;font-size:24px}
 
-    
+    .category{margin-top:24px}
+    .category h2{margin:0 0 12px;font-size:20px}
 
-    
-    <title>Hexo</title>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-    
+    .pathway{background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;margin-bottom:12px}
+    .pathway-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .pathway-title{font-weight:600}
+    .toggle-btn{background:none;border:1px solid rgba(255,255,255,0.04);padding:6px 8px;border-radius:6px;color:var(--muted);cursor:pointer}
 
-    
-        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml" />
-    
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:10px}
+    .card{background:var(--card);border-radius:10px;padding:12px;display:flex;flex-direction:column;align-items:center;box-shadow:0 6px 18px rgba(0,0,0,0.6);transition:transform .12s ease}
+    .card:hover{transform:translateY(-6px)}
+    .avatar{width:88px;height:88px;border-radius:10px;background:linear-gradient(135deg,#2b2b2b,#111);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:28px;color:rgba(255,255,255,0.9);margin-bottom:10px;overflow:hidden}
+    .name{font-size:14px;text-align:center;color:#fff;margin-bottom:6px}
+    .remark{font-size:12px;color:var(--muted);text-align:center;margin-bottom:6px}
+    .btn{background:transparent;border:1px solid;padding:6px 10px;border-radius:6px;font-size:13px;cursor:pointer}
+    .btn-blue{border-color:var(--accent-blue);color:var(--accent-blue)}
+    .btn-red{border-color:var(--accent-red);color:var(--accent-red)}
 
-    
+    /* modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+    .modal{max-width:720px;width:100%;background:linear-gradient(180deg,#0b0b10,#0f0e18);border-radius:12px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.7)}
+    .modal header{display:flex;justify-content:space-between;align-items:center}
+    .close{background:none;border:0;color:var(--muted);font-size:20px;cursor:pointer}
 
-    
-<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
-
-    
-<link rel="stylesheet" href="/libs/titillium-web/styles.css">
-
-    
-<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
-
-
-    
-<link rel="stylesheet" href="/css/style.css">
-
-
-    
-<script src="/libs/jquery/3.5.0/jquery.min.js"></script>
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
-
-    
-    
-        
-<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
-
-    
-    
-    
-    
-
-
-<meta name="generator" content="Hexo 5.2.0"></head>
-
+    @media (max-width:520px){.avatar{width:68px;height:68px;font-size:22px}.grid{gap:10px}}
+  </style>
+</head>
 <body>
-    <div id="wrap">
-        <header id="header">
-    <div id="header-outer" class="outer">
-        <div class="container">
-            <div class="container-inner">
-                <div id="header-title">
-                    <h1 class="logo-wrap">
-                        <a href="/" class="logo"></a>
-                    </h1>
-                    
-                </div>
-                <div id="header-inner" class="nav-container">
-                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
-                    <div class="nav-container-inner">
-                        <ul id="main-nav">
-                            
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/">Home</a>
-                                </li>
-                            
-                                    
-                                
-                                <li class="main-nav-list-item" >
-                                    <a class="main-nav-list-link" href="/about/index.html">About</a>
-                                </li>
-                            
-                        </ul>
-                        <nav id="sub-nav">
-                            <div id="search-form-wrap">
+  <div class="wrap">
+    <h1>第十八条途径 by锤子</h1>
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+    <!-- 四个大类容器（脚本会填充） -->
+    <div id="category-town" class="category"></div>
+    <div id="category-outsider" class="category"></div>
+    <div id="category-minion" class="category"></div>
+    <div id="category-demon" class="category"></div>
+  </div>
+
+  <!-- modal -->
+  <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal" role="document">
+      <header>
+        <div>
+          <strong id="modalName">角色名</strong>
         </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
+        <button class="close" id="modalClose" aria-label="关闭">✕</button>
+      </header>
+      <main style="margin-top:12px">
+        <div id="modalBody">
+          <p style="color:var(--muted)">技能未填写。</p>
         </div>
+      </main>
+
     </div>
-</div>
-<script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
+  </div>
+
+  <script>
+    /* 数据结构说明（在此修改内容）：
+       每个大类（category）是一个对象，包含：
+         title: 大类显示名（例如“善良 · 镇民途径”）
+         color: 'blue' 或 'red'（用于按钮样式）
+         paths: 数组，每个 path 是：{ name: '途径名', chars: [ { id, name, skills:[], remark:'' }, ... ] }
+       你可以为每个途径添加任意数量的角色（ABC只是示例，数量可变）。
+    */
+
+    const categories = {
+      town: {
+        title: '善良 · 镇民途径', color: 'blue',
+        paths: [
+          { name: '求真', chars: [
+              { id:'t-qz-a', name: '洗衣妇', skills:['在你的首个夜晚，你会得知两名玩家和一个镇民角色：这两名玩家之一是该角色。'], remark: '' },
+              { id:'t-qz-b', name: '调查员', skills:['在你的首个夜晚，你会得知两名玩家和一个爪牙角色：这两名玩家之一是该角色（或者你会得知没有爪牙在场）。'], remark: '' },
+              { id:'t-qz-c', name: '钟表匠', skills:['在你的首个夜晚，你会得知恶魔与爪牙之间最近的距离。（邻座的玩家距离为1）'], remark: '' }
+            ] },
+          { name: '修行', chars: [
+              { id:'t-xx-a', name: '调音师', skills:['在你的首个夜晚，你会得知一个外来者角色和一个爪牙角色，他们中有且只有一个在场'], remark: '' },
+              { id:'t-xx-b', name: '修行者', skills:['在你的首个夜晚，你会得知距离最近的邪恶玩家位于你的顺时针还是逆时针方向。如果两侧的邪恶玩家与你距离相等，你得知的信息由说书人决定。'], remark: '' },
+              { id:'t-xx-c', name: '阴阳师', skills:['在你的首个夜晚，你会得知两个善良角色和两个邪恶角色，其中有且只有两个角色在场。'], remark: '' }
+            ] },
+          { name: '猎魔', chars: [
+              { id:'t-lm-a', name: '造谣者', skills:['每个白天，你可以公开发表一个声明。如果该声明正确，在当晚会有一名玩家死亡。'], remark: '' },
+              { id:'t-lm-b', name: '猎手', skills:['每局游戏限一次，你可以在白天时公开选择一名玩家：如果他是恶魔，他死亡。'], remark: '' },
+              { id:'t-lm-c', name: '戏法师', skills:['每个白天，你可以公开进行一次谁是爪牙，谁是恶魔的猜测。如果你猜对，善良阵营获胜。'], remark: '' }
+            ] },
+          { name: '统帅', chars: [
+              { id:'t-ts-a', name: '渔夫', skills:['每局游戏限一次，在白天时，你可以让说书人给你一些能帮助你的阵营获胜的建议。'], remark: '' },
+              { id:'t-ts-b', name: '女祭司', skills:['每个夜晚，你会得知一名说书人认为你最应该与其交流的玩家。'], remark: '' },
+              { id:'t-ts-c', name: '将军', skills:['每个夜晚，你会得知说书人认为哪个阵营当前更有优势（善良/邪恶/均势）。'], remark: '' }
+            ] },
+          { name: '大梦', chars: [
+              { id:'t-dm-a', name: '侍女', skills:['每个夜晚，你要选择除你以外的两名存活的玩家：你会得知他们中有几人在当晚因其自身能力而被唤醒。'], remark: '' },
+              { id:'t-dm-b', name: '占卜师', skills:['每个夜晚，你要选择两名玩家：你会得知他们之中是否有恶魔。会有一名善良玩家始终被你的能力当作恶魔。'], remark: '' },
+              { id:'t-dm-c', name: '筑梦师', skills:['每个夜晚，你要选择除你及旅行者以外的一名玩家：你会得知一个善良角色和一个邪恶角色，该玩家是其中一个角色。'], remark: '' }
+            ] },
+          { name: '守护', chars: [
+              { id:'t-sh-a', name: '和平主义者', skills:['被处决的善良玩家可能不会死亡。'], remark: '' },
+              { id:'t-sh-b', name: '旅店老板', skills:['每个夜晚*，你要选择两名玩家：他们当晚不会死亡，但其中一人会醉酒到下个黄昏。'], remark: '' },
+              { id:'t-sh-c', name: '锦衣卫', skills:['每个夜晚*，你要选择一名玩家：如果他在下个黄昏前死亡，你代替他死亡。'], remark: '' }
+            ] },
+          { name: '计量', chars: [
+              { id:'t-jl-a', name: '城镇公告员', skills:['每个夜晚*，你会得知在今天白天时是否有爪牙发起过提名'], remark: '' },
+              { id:'t-jl-b', name: '卖花女孩', skills:['每个夜晚*，你会得知在今天白天时是否有恶魔投过票。'], remark: '' },
+              { id:'t-jl-c', name: '博学者', skills:['每个白天，你可以私下询问说书人以得知两条信息：一个是正确的，一个是错误的。'], remark: '' }
+            ] },
+          { name: '合纵', chars: [
+              { id:'t-gq-a', name: '共情者', skills:['每个夜晚，你会得知与你邻近的两名存活的玩家中邪恶玩家的数量。'], remark: '' },
+              { id:'t-gq-b', name: '茶艺师', skills:['如果与你邻近的两名存活的玩家是善良的，他们不会死亡'], remark: '' },
+              { id:'t-gq-c', name: '异教领袖', skills:['每个夜晚，你会转变为与你邻近的一名存活的玩家的阵营。每个白天，你可以提议所有玩家加入你的教派，如果所有善良玩家同意加入，你的阵营获胜。'], remark: '' }
+            ] },
+          { name: '牺牲', chars: [
+              { id:'t-xs-a', name: '守鸦人', skills:['如果你在夜晚死亡，你会被唤醒，然后你要选择一名玩家：你会得知他的角色。'], remark: '' },
+              { id:'t-xs-b', name: '神谕', skills:['每个夜晚*，你会得知有多少名死亡的玩家是邪恶的。'], remark: '' },
+              { id:'t-xs-c', name: '报丧女妖', skills:['如果恶魔杀死了你，所有玩家都会得知此事。从现在开始，你每天可以发起两次提名，每次投票时可以投两票。'], remark: '' }
+            ] },
+          { name: '先知', chars: [
+              { id:'t-xz-a', name: '送葬者', skills:['每个夜晚*，你会得知今天白天死于处决的玩家的角色。'], remark: '' },
+              { id:'t-xz-b', name: '数学家', skills:['每个夜晚，你会得知有多少名玩家的能力因为其他角色的能力而未正常生效。（从上个黎明到你被唤醒时）'], remark: '' },
+              { id:'t-xz-c', name: '郎中', skills:['每个夜晚，你要选择除你以外的一名玩家：你会得知一个与他能力相关的词语。'], remark: '' }
+            ] },
+          { name: '戏子', chars: [
+              { id:'t-xz-a', name: '水手', skills:['每个夜晚，你要选择一名存活的玩家：你或他之一会醉酒直到下个黄昏。你不会死亡。'], remark: '' },
+              { id:'t-xz-b', name: '赌徒', skills:['每个夜晚*，你要选择一名玩家并猜测该玩家的角色：如果你猜错了，你会死亡。'], remark: '' },
+              { id:'t-xz-c', name: '杂技演员', skills:['每个夜晚*，你要选择一名玩家：如果当晚他醉酒或中毒，你死亡。'], remark: '' }
+            ] },
+          { name: '艺术', chars: [
+              { id:'t-ys-a', name: '女裁缝', skills:['每局游戏限一次，在夜晚时，你可以选择除你以外的两名玩家：你会得知他们是否为同一阵营。'], remark: '' },
+              { id:'t-ys-b', name: '杂耍艺人', skills:['在你的首个白天，你可以公开猜测任意玩家的角色最多五次。在当晚，你会得知猜测正确的角色数量。'], remark: '' },
+              { id:'t-ys-c', name: '艺术家', skills:['每局游戏限一次，在白天时，你可以私下询问说书人一个是非问题，你会得知该问题的答案。'], remark: '' }
+            ] },
+          { name: '怪物', chars: [
+              { id:'t-gw-a', name: '失忆者', skills:['你不知道你的能力是什么。每个白天你可以找说书人猜测一次，你会得知你的猜测有多准确。'], remark: '' },
+              { id:'t-gw-b', name: '食人族', skills:['你拥有上个死于处决的玩家的能力。如果该玩家属于邪恶阵营，你中毒直到下个善良玩家死于处决。'], remark: '' },
+              { id:'t-gw-c', name: '炼金术士', skills:['你拥有一个爪牙角色的能力。当你使用能力时，说书人可能会要求你更换选择。'], remark: '' }
+            ] }
+            
+        ]
+      },
+
+      outsider: {
+        title: '善良 · 外来者途径', color: 'blue',
+        paths: [
+          { name: '抉择', chars: [
+              { id:'o-jz-a', name:'畸形秀演员', skills:['如果你“疯狂”地证明自己是外来者，你可能被处决。'], remark:'' },
+              { id:'o-jz-b', name:'呆瓜', skills:['当你得知你死亡时，你要公开选择一名存活的玩家：如果他是邪恶的，你的阵营落败。'], remark:'' },
+              { id:'o-jz-c', name:'月之子', skills:['当你得知你死亡时，你要公开选择一名存活的玩家。如果他是善良的，在当晚他会死亡。'], remark:'备注' }
+            ] },
+          { name: '连横', chars: [
+              { id:'o-lh-a', name:'告密者', skills:['爪牙会在其首个夜晚得知三个伪装。'], remark:'' },
+              { id:'o-lh-b', name:'政客', skills:['如果你是对你的阵营落败负最大责任的人，你转变阵营并获胜，即使你已死亡。'], remark:'' },
+              { id:'o-lh-b', name:'入殓师', skills:['如果你提名了恶魔且他死于这次处决，你会变成那个邪恶的恶魔。当剩余存活玩家小于等于四人时（旅行者除外），你失去能力。'], remark:'' }
+            ] },
+          { name: '命运', chars: [
+              { id:'o-my-a', name:'疯子', skills:['你以为你是一个恶魔，但其实你不是。恶魔知道你是疯子以及你在每个夜晚选择了哪些玩家。'], remark:'相克规则：恶魔知道疯子在每个夜晚选择了哪个角色' },
+            ] },
+          { name: '沉沦', chars: [
+              { id:'o-cl-a', name:'酒鬼', skills:['你不知道你是酒鬼。你以为你是一个镇民角色，但其实你不是。'], remark:'' },
+            ] }
+        ]
+      },
+
+      minion: {
+        title: '邪恶 · 爪牙途径', color: 'red',
+        paths: [
+          { name: '贪狼', chars:[
+              { id:'m-tl-a', name:'精神病患者', skills:['每个白天，在提名开始前，你可以公开选择一名玩家：他死亡。如果你被处决，提名你的玩家需要和你猜拳，只有你输了你才会死亡。'], remark:'' },
+              { id:'m-tl-b', name:'禁卫军', skills:['“疯狂”地想要死亡的玩家可能会立即被处决。'], remark:'' }
+            ] },
+            { name: '蚀骨', chars:[
+              { id:'m-sg-a', name:'投毒者', skills:['每个夜晚，你要选择一名玩家：他在当晚和明天白天中毒。'], remark:'' },
+              { id:'m-sg-b', name:'酿酒师', skills:['每个夜晚，你要选择一个镇民角色：当他下一次通过自身能力获取信息时，改为得知你给出的信息。'], remark:'' }
+            ] },
+            { name: '黑夜', chars:[
+              { id:'m-hy-a', name:'魔鬼代言人', skills:['每个夜晚，你要选择一名存活的玩家（与上个夜晚不同）：如果明天白天他被处决，他不会死亡。'], remark:'' },
+              { id:'m-hy-b', name:'红唇女郎', skills:['如果大于等于五名玩家存活时（旅行者不计算在内）恶魔死亡，你变成那个恶魔。'], remark:'' }
+            ] },
+            { name: '太阳', chars:[
+              { id:'m-ty-a', name:'限', skills:['在等同于初始外来者数量的夜晚，所有镇民玩家中毒直到下个黄昏。[外来者数量任意]'], remark:'外来者数量任意' },
+              { id:'m-ty-b', name:'教父', skills:['在你的首个夜晚，你会得知有哪些外来者角色在场。如果有外来者在白天死亡，你会在当晚被唤醒并且你要选择一名玩家：他死亡。[-1或+1外来者]'], remark:'外来者数量任意' }
+            ] },
+        ]
+      },
+
+      demon: {
+        title: '邪恶 · 恶魔途径', color: 'red',
+        paths: [
+        { name: '混乱', chars:[
+              { id:'d-hl-a', name:'涡流', skills:['每个夜晚*，你要选择一名玩家：他死亡。镇民玩家的能力都会产生错误信息。如果白天没人被处决，邪恶阵营获胜。'], remark:'' },
+              { id:'d-hl-b', name:'诺-达鲺', skills:['每个夜晚*，你要选择一名玩家：他死亡。与你邻近的两名镇民中毒。'], remark:'' }
+            ] }, 
+            { name: '续存', chars:[
+              { id:'d-xc-a', name:'痢蛭', skills:['每个夜晚*，你要选择一名玩家：他死亡。在你的首个夜晚，你要选择一名存活的玩家：他中毒，只有当他处于死亡状态时你才会立即死亡。'], remark:'' },
+              { id:'d-xc-b', name:'小恶魔', skills:['每个夜晚*，你要选择一名玩家：他死亡。如果你以这种方式自杀，一名爪牙会变成小恶魔。'], remark:'' }
+            ] }, 
+            { name: '死亡', chars:[
+              { id:'d-sw-a', name:'饕餮', skills:['技能每个夜晚*，你要选择任意数量的非旅行者玩家或一名旅行者玩家：如果他们的角色类型均不相同，他们死亡。[+1外来者]1'], remark:'' },
+              { id:'d-sw-b', name:'珀', skills:['每个夜晚*，你可以选择一名玩家：他死亡。如果你上次选择时没有选择任何玩家，当晚你要选择三名玩家：他们死亡。'], remark:'' }
+            ] },
+        ]
+      }
     };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
-</script>
 
-<script src="/js/insight.js"></script>
+    const modalBackdrop = document.getElementById('modalBackdrop');
+    const modalName = document.getElementById('modalName');
+    const modalBody = document.getElementById('modalBody');
+    const modalClose = document.getElementById('modalClose');
 
+    function createCard(char, color){
+      const c = document.createElement('div');
+      c.className = 'card';
 
-</div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+      const avatar = document.createElement('div');
+      avatar.className = 'avatar';
+      const initials = Array.from(char.name).slice(0,2).join('');
+      avatar.textContent = initials;
 
-        <div class="container">
-            <div class="main-body container-inner">
-                <div class="main-body-inner">
-                    <section id="main">
-                        <div class="main-body-header">
-    <h1 class="header">
-    
-    <em class="page-title-link" data-url="home">Home</em>
-    </h1>
-</div>
+      const name = document.createElement('div');
+      name.className = 'name';
+      name.textContent = char.name;
 
-                        <div class="main-body-content">
-                            
+      c.appendChild(avatar);
+      c.appendChild(name);
 
-    
-    
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2020" class="archive-year"><i class="icon fa fa-calendar-o"></i>2020</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2020/12/16/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://example.com/2020/12/16/hello-world/">0</span>
-    
-</span>
+      if(char.remark){
+        const remark = document.createElement('div');
+        remark.className = 'remark';
+        remark.textContent = char.remark;
+        c.appendChild(remark);
+      }
 
+      const btn = document.createElement('button');
+      btn.className = 'btn ' + (color === 'blue' ? 'btn-blue' : 'btn-red');
+      btn.textContent = '查看技能';
+      btn.addEventListener('click', ()=>openModal(char));
+      c.appendChild(btn);
 
-    
-</a>
+      return c;
+    }
 
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2020-12-15T23:15:39.980Z" itemprop="datePublished">2020-12-16</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2020/12/16/hello-world/">Hello World</a>
-        </h1>
-    
+    function openModal(char){
+      modalName.textContent = char.name;
+      if(Array.isArray(char.skills) && char.skills.length){
+        modalBody.innerHTML = '<ul>' + char.skills.map(s=>'<li>'+escapeHtml(s)+'</li>').join('') + '</ul>';
+      } else {
+        modalBody.innerHTML = '<p style="color:var(--muted)">技能未填写。</p>';
+      }
+      showModal();
+    }
 
-        <p class="article-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
+    function showModal(){ modalBackdrop.style.display='flex'; document.body.style.overflow='hidden'; }
+    function closeModal(){ modalBackdrop.style.display='none'; document.body.style.overflow='auto'; }
 
+    modalClose.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', (e)=>{ if(e.target===modalBackdrop) closeModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
 
-    </div></section>
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\"/g,'&quot;'); }
 
+    function render(){
+      // 对四个大类逐个渲染
+      Object.entries(categories).forEach(([key, cat])=>{
+        const container = document.getElementById('category-'+key);
+        container.innerHTML = '';
+        // 标题
+        const h = document.createElement('h2');
+        h.textContent = cat.title;
+        h.style.color = cat.color === 'blue' ? 'var(--accent-blue)' : 'var(--accent-red)';
+        container.appendChild(h);
 
+        // 每个途径
+        cat.paths.forEach((p, idx)=>{
+          const pathWrap = document.createElement('div');
+          pathWrap.className = 'pathway';
 
-                        </div>
-                    </section>
-                    <aside id="sidebar">
-    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
-    <div class="sidebar-top">
-        <p>follow:</p>
-        <ul class="social-links">
-            
-                
-                <li>
-                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-twitter"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-facebook"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="stack-overflow" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-stack-overflow"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
-                        <i class="icon fa fa-github"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-weibo"></i>
-                    </a>
-                </li>
-                
-            
-                
-                <li>
-                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
-                        <i class="icon fa fa-rss"></i>
-                    </a>
-                </li>
-                
-            
-        </ul>
-    </div>
-    
-    <div class="widgets-container">
-        
-            
-                
+          const header = document.createElement('div'); header.className = 'pathway-header';
+          const title = document.createElement('div'); title.className='pathway-title'; title.textContent = p.name;
+          const toggle = document.createElement('button'); toggle.className='toggle-btn'; toggle.textContent='收起';
+          header.appendChild(title); header.appendChild(toggle);
+          pathWrap.appendChild(header);
 
-            
-                
-    <div class="widget-wrap">
-        <h3 class="widget-title">recents</h3>
-        <div class="widget">
-            <ul id="recent-post" class="">
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2020/12/16/hello-world/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
+          const grid = document.createElement('div');
+          grid.className='grid';
 
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2020/12/16/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2020-12-15T23:15:39.980Z" itemprop="datePublished">2020-12-16</time></p>
-                        </div>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
+          (p.chars || []).forEach(ch=> grid.appendChild(createCard(ch, cat.color)));
 
-            
-                
+          // toggle behavior
+          let open = true;
+          toggle.addEventListener('click', ()=>{
+            open = !open;
+            grid.style.display = open ? 'grid' : 'none';
+            toggle.textContent = open ? '收起' : '展开';
+          });
 
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">archives</h3>
-        <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a><span class="archive-list-count">1</span></li></ul>
-        </div>
-    </div>
+          pathWrap.appendChild(grid);
+          container.appendChild(pathWrap);
+        });
+      });
+    }
 
-
-            
-                
-
-            
-                
-
-            
-                
-    <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
-        <div class="widget">
-            <ul>
-                
-                    <li>
-                        <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a>
-                    </li>
-                
-            </ul>
-        </div>
-    </div>
-
-
-            
-        
-    </div>
-</aside>
-
-                </div>
-            </div>
-        </div>
-        <footer id="footer">
-    <div class="container">
-        <div class="container-inner">
-            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
-            <div class="credit">
-                <h1 class="logo-wrap">
-                    <a href="/" class="logo"></a>
-                </h1>
-                <p>&copy; 2020 John Doe</p>
-                
-                <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="https://github.com/ppoffice" target="_blank">PPOffice</a></p>
-                
-            </div>
-            <div class="footer-plugins">
-              
-    
-
-
-            </div>
-        </div>
-    </div>
-</footer>
-
-    </div>
-    
-    
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-    </script>
-
-
-
-
-
-    
-        
-<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-share.min.js"></script>
-
-        
-<script src="/libs/lightgallery/js/lg-video.min.js"></script>
-
-    
-    
-        
-<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
-
-    
-    
-
-    
-    
-    
-
-
-
-<!-- Custom Scripts -->
-
-<script src="/js/main.js"></script>
-
-
+    render();
+  </script>
 </body>
 </html>
